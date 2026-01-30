@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+     font-family: "Poppins", sans-serif;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     text-decoration: none;
+     
+}
+
+/* ////  inicio.html //// */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 8%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: #fff;
+}
+
+body{
+    color: black;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: black;
+    font-weight: 600;
+    
+}
+
+.navbar{
+    position: relative;
+}
+
+.navbar a{
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+    margin: 0 20px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: seagreen;
+
+}
+
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/imagenes/como.jpg); /* Puedo insertar una imagen con url() */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 50px 8% 0;
+}
+
+.home-content{
+    max-width: 630px;
+}
+
+.home-content h1{
+    position: relative;
+    font-size: 45px;
+    line-height: 1.2;
+}
+
+.home-content h1:nth-child(3){
+    background: linear-gradient(#d7f4de, #000000);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.home-content p{
+    position: relative;
+    font-size: 16px;
+    margin: 25px 0 30px;
+}
+
+.home-content .btn-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    
+}
+
+.btn{
+    padding: 10px 28px;
+    background: black;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.btn-box .btn:nth-child(2){
+    background: transparent;
+    color: #fff;
+    transition: .5s;
+}
+
+.btn-box .btn:nth-child(2):hover{
+    background: seagreen;
+    color: #fff;
+}
+
+.btn.sing-up{
+    position: relative;
+    border: none;
+}
+
+.animate{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    animation: show-right 1s ease-out forwards;
+    animation-delay: calc(.3s * var(--i) );
+}
+
+
+.animate.bg{
+    animation: fade-in 1s ease-out forwards;
+    animation-delay: 3.2s;
+}
+
+footer{
+    background-color: #fff;
+}
+
+footer p{
+    margin: 0;
+    padding: 5px;
+    color:  black;
+}
+
+footer .container-footer{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Animaciones */
+
+@keyframes show-right {
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes fade-in {
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Nutritec */
+
+#nutri2{
+    background-color: #fff;
+    color: #31b865;
+    text-align: center;
+    margin-top: 0;
+    position: absolute;
+
+}
+
+.btnNutri{
+
+    padding: 10px 28px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    
+}
+
+.btnNutri .btn:nth-child(2){
+    background: transparent;
+    color: #fff;
+    transition: .5s;
+}
+
+.btnNutri .btn:nth-child(2):hover{
+    background: seagreen;
+    color: #fff;
+}
+
+
+
+#nutri2 h4{
+    margin-top: 0;
+    font-size: 3.2em;
+    text-align: center;
+    padding: 2px 2px;
+}
+
+#nutri2 .container-nutri{
+    padding: 100px 100px;
+
+}
+
+#nutri2 p{
+    display: flex;
+    color: #EEEEEE;
+    text-align: justify;
+    padding: 5px 50px;
+}
+
+#nutri2 .container-card{
+    display: flex;
+    justify-content: center;
+
+}
+
+#nutri2 .card{
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 15px;
+
+}
+
+.card:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgb(0,0,0,0.5),
+        rgb(0,0,0,0.5)
+    )
+     ,url("/imagenes/conocenos.jpg");
+}
+
+
+
+
+/*  Generar */
+
+
+/*  Generar    */
+
+
+.generar{
+    box-sizing: border-box;
+}
+h1{ font-size: 3.5em;}
+h2{ font-size: 2.7em;}
+h3{ font-size: 2em;}
+p{ font-size: 1.25em;}
+ul{ list-style: none;}
+
+
+.generar{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+
+button{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px black;
+    color: #EEEEEE;
+    background-color:#31b865;
+}
+
+button:hover{
+    background-color: black;
+}
+
+#nuestras-dietas{
+    background-color: black;
+    color: #EEEEEE;
+    text-align: center;
+    
+}
+
+#nuestras-dietas .container-dietas{
+    padding: 150px 12px;
+}
+
+#nuestras-dietas h2{
+    margin-top: 0;
+    font-size: 3.2em;
+}
+
+
+#nuestras-dietas p{
+    display: none;
+    text-align: justify;
+
+}
+
+#nuestras-dietas .carta{
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+.carta:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgb(0,0,0,0.5),
+        rgb(0,0,0,0.5)
+    )
+     ,url("/imagenes/conocenos.jpg");
+
+}
+
+.carta:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgb(0,0,0,0.5),
+        rgb(0,0,0,0.5)
+    )
+     ,url("/imagenes/conoce.webp");
+    
+}
+
+.carta:nth-child(3){
+    background-image: linear-gradient(
+        0deg,
+        rgb(0,0,0,0.5),
+        rgb(0,0,0,0.5)
+    )
+     ,url("/imagenes/como.jpg");
+    
+}
+
+#final{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #31b865;
+    color: black;
+    height: 80vh;
+}
+
+#final h2{
+    font-size: 9vw;
+}
+
+#final button{
+    font-size: 5vw;
+}
+
+footer{
+    background-color: gray;
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color:  black;
+}
+
+footer .container-footer{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+@media (min-width: 850px){
+    header{
+        position:static;
+        width: 100%;
+    }
+    header .container-inicio{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    #hero{
+        height: 100%;
+        width: 100%;
+    }
+
+    #hero h1{
+        font-size: 6em;
+    }
+
+    
+
+    #somosNutri .container-Nutri{
+        display: flex;
+        justify-content: center;
+
+    }
+
+    #somosNutri .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: justify;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #somosNutri h2{
+        margin-top: 0px;
+    }
+
+    #somosNutri .img-container{
+        background-image: url("/imagenes/conoce.webp");
+        background-size: cover;
+        background-position: center center;
+        width: 500px;
+        height: 400px;
+
+    }
+
+    #nuestras-dietas .programas{
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    #nuestras-dietas p{
+        display: block;
+        text-align: justify;
+    }
+
+    #nuestras-dietas h2{
+        font-size: 4em;
+    }
+
+    #nuestras-dietas h3{
+        margin-top: 0;
+    }
+
+    #nuestras-dietas .carta{
+        padding: 50px;
+        background-size: 100% 150px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: darkgray;
+        box-shadow: 2px 2px 10px gray;
+    }
+
+    #final h2{
+        font-size: 3em;
+        
+    }
+
+    #final button{
+        font-size: 2em;
+    }
+
+    footer .container-footer{
+        align-content: flex-end;
+    }
+
+
+   
+   
+}
+
+/* PanelAdmin */
+
+.cuerpoAdmin{
+
+    width: 100%;
+    height: 100vh;
+    background-image: url(/imagenes/admin.jpg); /* Puedo insertar una imagen con url() */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 10px 25% 10px;
+}
+
+        
+        body.cuerpoAdmin {
+ 
+            font-family: Arial, sans-serif;
+            text-align: justify;
+            line-height: 1.6;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+   
+        section.panelAdmin {
+            
+            width: 85%;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        section.panelAdmin h1, section.panelAdmin h2 {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        section.panelAdmin p {
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .centerPanel table {
+           
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .centerPanel th, .centerPanel td {
+        
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .centerPanel th {
+            background-color: #f4f4f4;
+        }
+
+        .btn-eliminar {
+            background: #e63946;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-eliminar:hover {
+            background: #c92d3b;
+        }
+
+
+        .header a.btn.sing-up {
+            cursor: pointer;
+        }
+
+
+
+/* recuperar cuenta */
+
+.recuperar {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.recuperar h1 {
+    color: #333333;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.recuperar p {
+    color: #555555;
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.recuperar form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.recuperar label {
+    text-align: left;
+    font-weight: 500;
+    color: #333333;
+    font-size: 14px;
+}
+
+.recuperar input[type="email"] {
+    padding: 12px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.recuperar input[type="email"]:focus {
+    border-color: #2575fc;
+    outline: none;
+    box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+}
+
+.recuperar button {
+    padding: 12px;
+    background-color: #2575fc;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.recuperar button:hover {
+    background-color: #6a11cb;
+    transform: translateY(-2px);
+}
+
+.recuperarContraseña{
+    background-image: url(/imagenes/Inicio-1.png);
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
