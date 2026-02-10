@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
-        <link rel="stylesheet" href="/css/perfil.css">
+        <link rel="stylesheet" href="/nutrytec/css/perfil.css">
            
 
         <?php
@@ -30,7 +30,7 @@ if (!isset($_SESSION["user_id"])) {
     <?php endif; ?>
 
 
-    <form action="controlador/actualizar_perfil.php" method="POST">
+    <form action="/controlador/actualizar_perfil.php" method="POST">
 
         <label>Nuevo Username</label>
         <input type="text" name="username" placeholder="Escribe tu username">
@@ -49,7 +49,7 @@ if (!isset($_SESSION["user_id"])) {
 
 <script>
     function logout() {
-        window.location.href = "/controlador/logout.php";
+        window.location.href = "/nutrytec/controlador/logout.php";
     }
 </script>
 

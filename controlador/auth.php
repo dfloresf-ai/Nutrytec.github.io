@@ -1,5 +1,7 @@
 <?php
-require "conexion.php";
+
+require __DIR__ . "/conexion.php";
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {

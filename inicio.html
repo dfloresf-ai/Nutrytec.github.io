@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nutritec - Login / Sign Up</title>
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/nutrytec/css/style.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -52,7 +52,7 @@ if (msg) {
 <body class="inicio-sesion">
     <div class="container">
         <div class="form-box login">
-            <form id="form-login" action="/controlador/auth.php" method="post">
+            <form id="form-login" action="/nutrytec/controlador/auth.php" method="post">
                 <input type="hidden" name="action" value="login">
                 <h1>Login</h1>
 
@@ -62,14 +62,16 @@ if (msg) {
                 </div>
 
                 <div class="input-box">
-                    <input id="login-password" name="password" type="password" placeholder="Password" required>
-                    <i class="fa-solid fa-lock"></i>
+                <input id="login-password" name="password" type="password" placeholder="Password" required>
+                
+                <i class="fa-solid fa-eye" onclick="togglePassword('login-password', this)"></i>
                 </div>
+
 
                 <span id="login-error" class="error-msg"></span>
 
                 <div class="forgot-link">
-                    <a href="recuperar.html">Forgot Password?</a>
+                    <a href="/nutrytec/recuperar.html">Forgot Password?</a>
                 </div>
 
                 <button type="submit" class="btn">Login</button>
@@ -84,7 +86,7 @@ if (msg) {
         </div>
 
         <div class="form-box register">
-            <form id="form-register" action="/controlador/auth.php" method="post">
+            <form id="form-register" action="/nutrytec/controlador/auth.php" method="post">
                 <input type="hidden" name="action" value="register">
                 <h1>Registration</h1>
 
@@ -99,9 +101,11 @@ if (msg) {
                 </div>
 
                 <div class="input-box">
-                    <input id="reg-password" name="password" type="password" placeholder="Password" required>
-                    <i class="fa-solid fa-lock"></i>
+                <input id="reg-password" name="password" type="password" placeholder="Password" required>
+                
+                <i class="fa-solid fa-eye" onclick="togglePassword('reg-password', this)"></i>
                 </div>
+
 
                 <span id="register-error" class="error-msg"></span>
 
@@ -137,8 +141,48 @@ if (msg) {
 
     </div>
 
-    <script src="/java/script.js"></script>
+    <script src="/nutrytec/java/script.js"></script>
     
 </body>
+<script>
+document.getElementById("form-login").addEventListener("submit", function (e) {
+    const email = document.getElementById("login-email").value.trim();
+    const password = document.getElementById("login-password").value.trim();
+
+    if (email === "" || password === "") {
+        e.preventDefault(); // evita enviar el formulario
+        showToast("❌ Debes llenar todos los campos del login", true);
+    }
+});
+
+document.getElementById("form-register").addEventListener("submit", function (e) {
+    const username = document.getElementById("reg-username").value.trim();
+    const email = document.getElementById("reg-email").value.trim();
+    const password = document.getElementById("reg-password").value.trim();
+
+    if (username === "" || email === "" || password === "") {
+        e.preventDefault(); // evita enviar el formulario
+        showToast("❌ Debes llenar todos los campos del registro", true);
+    }
+});
+
+
+function togglePassword(id, icon) {
+    const input = document.getElementById(id);
+
+    if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        input.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
+}
+</script>
+
+
+
 
 </html>

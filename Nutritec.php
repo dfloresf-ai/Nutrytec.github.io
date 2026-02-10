@@ -14,7 +14,7 @@ if (!isset($_SESSION["user_id"])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  
         <meta http-equiv="Content-Security-Policy" content="default-src 'self';">
         <title> NutriTec </title>  
-        <link rel="stylesheet" href="/css/styles.css"> 
+        <link rel="stylesheet" href="/nutrytec/css/styles.css"> 
 
 
 

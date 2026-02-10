@@ -1,5 +1,5 @@
 <?php
-require "controlador/conexion.php";
+require "/controlador/conexion.php";
 
 $token = $_GET['token'] ?? '';
 
@@ -25,7 +25,7 @@ if (!$user || strtotime($user['reset_expiration']) < time()) {
 <body>
 <section class="reset">
     <h1>Restablecer Contraseña</h1>
-    <form action="controlador/reset_password.php" method="POST">
+    <form action="/controlador/reset_password.php" method="POST">
         <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
         <label for="password">Nueva contraseña:</label>
         <input type="password" name="password" id="password" required>

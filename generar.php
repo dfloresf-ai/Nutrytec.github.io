@@ -14,7 +14,7 @@ if (!isset($_SESSION["user_id"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nutritec-Generar Dieta</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/nutrytec/css/styles.css">
 
 
 </head>

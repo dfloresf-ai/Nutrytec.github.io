@@ -15,7 +15,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>Panel Admin</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/nutrytec/css/styles.css">
     <style>
         table {
             width: 85%;
@@ -56,7 +56,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <script>
 function logout() {
-    window.location.href = "/controlador/logout.php";
+    window.location.href = "/nutrytec/controlador/logout.php";
 }
 </script>
 
@@ -84,7 +84,7 @@ function logout() {
             <td><?= htmlspecialchars($u['email']) ?></td>
             <td><?= $u['rol'] ?></td>
             <td>
-                <form method="POST" action="controlador/eliminar_usuarios.php" onsubmit="return confirm('¿Eliminar a este usuario?');">
+                <form method="POST" action="/nutrytec/controlador/eliminar_usuarios.php" onsubmit="return confirm('¿Eliminar a este usuario?');">
                     <input type="hidden" name="id" value="<?= $u['id'] ?>">
                     <button type="submit" class="btn-eliminar">Eliminar</button>
                 </form>

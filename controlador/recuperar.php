@@ -29,6 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt = $conexion->prepare("UPDATE usuarios SET reset_token = ?, reset_expiration = ? WHERE id = ?");
     $stmt->execute([$token, $expiracion, $user['id']]);
 
-    echo "Token generado: <a href='/reset_password.php?token=$token'>Restablecer contraseña</a>";
+    echo "Token generado: <a href='reset_password.php?token=$token'>Restablecer contraseña</a>";
 }
 ?>

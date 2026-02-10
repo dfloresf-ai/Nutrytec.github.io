@@ -189,33 +189,6 @@ INSERT INTO `perfilsalud` VALUES (1,1,1.80,'Masculino',72.50,'Ninguna','Diabetes
 UNLOCK TABLES;
 
 --
--- Table structure for table `registroUsuario`
---
-
-DROP TABLE IF EXISTS `registroUsuario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `registroUsuario` (
-  `idRegistro` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`idRegistro`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `registroUsuario`
---
-
-LOCK TABLES `registroUsuario` WRITE;
-/*!40000 ALTER TABLE `registroUsuario` DISABLE KEYS */;
-INSERT INTO `registroUsuario` VALUES (1,'Juan Pérez','juanperez@example.com','12345'),(2,'Die','d.floresf@upam.edu.com','$2y$10$k.41hLR39ttbq21xuYFS8OkszbpA.wX.voKM4Z09C6MYmdjJd6Uly'),(3,'Arely','arelyfl@gmail.com','$2y$10$uQIfiztU5C9SKd1eHFV4TebW0U9esluYCL2lxc6.Yk.PiH.SaYsTq'),(4,'Flores','floresd@gmail.com','$2y$10$H53wNt7sL.WF2D7YcEh7kuG4PaBXNr1hu3E3AGrc.qNuxuiTDLF6O'),(5,'Raul','raulG@upam.edu','$2y$10$vgxeihKYNbzxkSBMcaFTK.pDfJzk1gpk5FpBZ/x8A4zAy5AiJFu9S'),(6,'sf','d.floresf@','$2y$10$m3fJVX1J62zflTNzgiq4fujSL4jE6CDpWyrGMuGyuHcJ.GkpGXwmO'),(7,'aASASD','d.floresf@upa','$2y$10$SuMWIrpifaY3z6zf6UCP/OgGrVMvzW0ikSK/Wfd91jt9NkY1kowCq'),(8,'sdasa','d.floresf@upam','$2y$10$SrkzPnHxf.m0IasQJOIwFehAPWj20x.aBi3OkJoOqCmhpRq9X07Ae'),(9,'Diego','doego@gmail.com','$2y$10$VaYDGpMXcRxqKkhwuV2uweER3iuu153H17vE0ZBCg8aUSDTctZ89a');
-/*!40000 ALTER TABLE `registroUsuario` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `registronombre`
 --
 
@@ -239,6 +212,33 @@ LOCK TABLES `registronombre` WRITE;
 /*!40000 ALTER TABLE `registronombre` DISABLE KEYS */;
 INSERT INTO `registronombre` VALUES (1,'Diego','Flores','Flores'),(2,'Raul','Jimenes','Flores'),(3,'Pablo','Jimenes','Escobar'),(4,'Pedro','Garc?a','Mart?nez'),(5,'Luc?a','Hern?ndez','Rojas'),(6,'Yogui','Insano','Gutierres'),(7,'Yerbani','lopez','Flores'),(8,'Ramon','Sanchez','Ronaldo'),(9,'Gustambo','Sanchez','Ronaldo'),(10,'Yogui','Insano','Gutierres'),(11,'Yerbani','lopez','Flores'),(12,'Ramon','Sanchez','Ronaldo'),(13,'Gustambo','Sanchez','Ronaldo'),(14,'Yogui','Insano','Gutierres'),(15,'Yerbani','lopez','Flores'),(16,'Ramon','Sanchez','Ronaldo'),(17,'Gustambo','Sanchez','Ronaldo');
 /*!40000 ALTER TABLE `registronombre` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `reset_password_tokens`
+--
+
+DROP TABLE IF EXISTS `reset_password_tokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `reset_password_tokens` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `expiracion` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `reset_password_tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `reset_password_tokens`
+--
+
+LOCK TABLES `reset_password_tokens` WRITE;
+/*!40000 ALTER TABLE `reset_password_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reset_password_tokens` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -281,6 +281,37 @@ LOCK TABLES `usuario` WRITE;
 INSERT INTO `usuario` VALUES (1,3,3,3,3,'Pablo','Ramires','Santos',1),(2,4,4,4,4,'Sherk','Solovino','Gutierres',2),(3,4,4,4,4,'Gustambo','Sanchez','Ronaldo',3),(4,5,5,5,5,'Yogui','Insano','Gutierres',4),(5,6,6,6,6,'Jesus','Celestino','Flores',5),(6,7,7,7,7,'Ramon','Valdes','Santana',6),(7,8,8,8,8,'Diego','Flores','Flores',7),(10,1,1,1,1,'Pedro','Garc?a','Mart?nez',NULL),(11,2,2,2,2,'Luc?a','Hern?ndez','Rojas',NULL),(12,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1),(13,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2),(14,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3),(15,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuarios` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `fecha_registro` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `rol` enum('usuario','admin') NOT NULL DEFAULT 'usuario',
+  `reset_token` varchar(255) DEFAULT NULL,
+  `reset_expiration` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (5,'admin','admin@example.com','$2y$10$FbL/2b4PdAQa1AbRaMo.9.I8LBkY7CFMKKwcVA9iSlpHmd1wuZaru','2025-12-12 19:45:35','admin','10b6efdf9a977297f9cb043466691e51e1d86881063e5013ae533630d06fca3c','2025-12-12 23:52:34'),(9,'usuario','usuario1@example.com','$2y$10$lx7REIL94yKPo4Bgnu/wf.OftQXQx0K4S05uth257gTODdINe7.vi','2025-12-13 03:37:14','usuario','46765c3638dfd2ca1dab73fc8b1fe2a3db2332452218d8b0e571fa15c3df3a38','2025-12-13 04:37:25'),(10,'daniel','danielInsano@example.com','$2y$10$GHSYzFwyIWt4srtb2txsNO/C06w.EXE0Z4gApam/BmEn6ewJt5VhS','2025-12-14 06:24:04','usuario',NULL,NULL),(11,'Yogui','yogui@upam.edu.mx','$2y$10$8EuiXftSk0ZDKr2gFeYXGetSW6x6SuH7TzsiqUd0ie07gEERNVBL.','2026-01-30 05:39:03','usuario',NULL,NULL);
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -291,4 +322,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-01 21:31:01
+-- Dump completed on 2026-02-09 20:41:43
